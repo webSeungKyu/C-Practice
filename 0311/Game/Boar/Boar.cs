@@ -1,5 +1,5 @@
 ﻿
-    class Boar
+    public class Boar
     {
     public int gold = 0;
     public string name = "멧돼지";
