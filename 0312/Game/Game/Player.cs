@@ -11,6 +11,13 @@ class Player : GameObject
 
     }
 
+    public Player(int newX, int newY)
+    {
+        shape = 'P';
+        x = newX;
+        y = newY;
+    }
+
     public override void Start()
     {
 
@@ -18,11 +25,6 @@ class Player : GameObject
 
 
     public override void Update()
-    {
-
-    }
-
-    public override void Render()
     {
 
     }

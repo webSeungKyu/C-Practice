@@ -1,8 +1,11 @@
-﻿  class Program
+﻿class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        Engine engine = new Engine();
+        engine.Init();//초기화
+        engine.Run();//실행
+        engine.Term();//종료
     }
+}
 

@@ -3,12 +3,19 @@ class Floor : GameObject
 {
     public Floor()
     {
-        shape = 'P';
+        shape = ' ';
     }
 
     ~Floor()
     {
 
+    }
+
+    public Floor(int newX, int newY)
+    {
+        shape = ' ';
+        x = newX;
+        y = newY;
     }
 
     public override void Start()
@@ -24,7 +31,7 @@ class Floor : GameObject
 
     public override void Render()
     {
-
+        base.Render();
     }
 
 }

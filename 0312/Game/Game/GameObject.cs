@@ -15,6 +15,12 @@ class GameObject
 
     }
 
+    public GameObject(int newX, int newY)
+    {
+        x = newX;
+        y = newY;
+    }
+
     public virtual void Start()
     {
 
@@ -28,7 +34,8 @@ class GameObject
 
     public virtual void Render()
     {
-
+        Console.SetCursorPosition(x, y);
+        Console.Write(shape);
     }
 
     public char shape;

@@ -3,12 +3,19 @@ class Monster : GameObject
 {
     public Monster()
     {
-        shape = 'P';
+        shape = 'M';
     }
 
     ~Monster()
     {
 
+    }
+
+    public Monster(int newX, int newY)
+    {
+        shape = 'M';
+        x = newX;
+        y = newY;
     }
 
     public override void Start()
@@ -24,7 +31,7 @@ class Monster : GameObject
 
     public override void Render()
     {
-
+        base.Render();
     }
 
 }
