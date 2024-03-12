@@ -12,17 +12,25 @@
 
     public List<GameObject> gameObjects;
     public bool isRunning = true;
+
+
     public void Init()
     {
+
+    }
+    public void LoadScene(string mapName)
+    {
+
+
         /*string dir = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
         string[] map = File.ReadAllLines(dir + "/../data/level01.map");*/
-        string[] map = File.ReadAllLines("../../../data/level01.map");
+        string[] map = File.ReadAllLines($"../../../data/{mapName}");
 
         for (int y = 0; y < map.Length; y++)
         {
-            for(int x = 0; x < map[y].Length; x++)
+            for (int x = 0; x < map[y].Length; x++)
             {
-                if( map[y][x] == '*')
+                if (map[y][x] == '*')
                 {
                     Instantiate(new Wall(x, y));
                 }
@@ -86,7 +94,7 @@
             gameObjects[i].Render();
         }*/
         Console.Clear();
-        foreach(GameObject gameObject in gameObjects)
+        foreach (GameObject gameObject in gameObjects)
         {
             gameObject.Render();
         }
