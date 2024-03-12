@@ -14,17 +14,9 @@
     public bool isRunning = true;
     public void Init()
     {
-        string[] map = new string[10];
-        map[0] = "**********";
-        map[1] = "*P       *";
-        map[2] = "*        *";
-        map[3] = "*        *";
-        map[4] = "*    M   *";
-        map[5] = "*        *";
-        map[6] = "*        *";
-        map[7] = "*        *";
-        map[8] = "*       G*";
-        map[9] = "**********";
+        /*string dir = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+        string[] map = File.ReadAllLines(dir + "/../data/level01.map");*/
+        string[] map = File.ReadAllLines("../../../data/level01.map");
 
         for (int y = 0; y < map.Length; y++)
         {
