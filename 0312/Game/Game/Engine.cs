@@ -16,11 +16,10 @@
 
     public void Init()
     {
-
+        Input.Init();
     }
     public void LoadScene(string mapName)
     {
-
 
         /*string dir = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
         string[] map = File.ReadAllLines(dir + "/../data/level01.map");*/
@@ -50,17 +49,16 @@
                 {
                     Instantiate(new Monster(x, y));
                 }
-
             }
         }
-        //Load();
+        //gameObjects.Sort();
     }
 
     public void Run()
     {
         while (isRunning)
         {
-            Input();
+            ProcessInput();
             Update();
             Render();
         } //frame
@@ -84,7 +82,10 @@
 
     protected void Update()
     {
-
+        foreach (GameObject gameObject in gameObjects)
+        {
+            gameObject.Update();
+        }
     }
 
     protected void Render()
@@ -100,9 +101,9 @@
         }
     }
 
-    protected void Input()
+    protected void ProcessInput()
     {
-        Console.ReadKey();
+        Input.keyInfo = Console.ReadKey();
     }
 }
 
