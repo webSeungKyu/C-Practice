@@ -26,6 +26,7 @@ public class Cor : MonoBehaviour
         for (int i = 0; i < text.Length; i++)
         {
             myText.text += text[i];
+            if (i > 10) { yield break; } // 중간에 멈추기
             yield return new WaitForSeconds(0.1f);
         }
     }
