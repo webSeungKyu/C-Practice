@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Cor : MonoBehaviour
+{
+    public TextMeshProUGUI writeText;
+    // Start is called before the first frame update
+    void Start()
+    {
+        writeText.text = "이 텍스트는 4.2초 뒤 바뀝니다";
+        Invoke("WriteText", 4.2f);
+    }
+
+
+    void WriteText()
+    {
+        StartCoroutine("MyText", "4.2초가 지났습니다\n텍스트가 바뀌고 있습니다..!");
+    }
+
+    IEnumerator MyText(string s)
+    {
+        writeText.text = "";
+        for (int i = 0; i < s.Length; i++)
+        {
+            writeText.text += s[i];
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+}
