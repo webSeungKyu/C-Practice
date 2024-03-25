@@ -1,0 +1,33 @@
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Solution.Instance.Write("ok");
+    }
+}
+
+    
+
+public class Solution
+{
+    private Solution() { }
+    private static Solution? instance;
+
+    public static Solution Instance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = new Solution();
+            }
+            return instance;
+        }
+    }
+
+    public void Write(string str)
+    {
+        Console.WriteLine($"싱글톤 생성 : {str}");
+    }
+}
